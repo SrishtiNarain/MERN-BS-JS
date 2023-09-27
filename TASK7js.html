@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Control</title>
+    <style>
+        #container {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+
+    <script>
+        const container = document.getElementById('container');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        let animationId;
+
+        function animate() {
+            let position = 0;
+
+            function moveSquare() {
+                position += 2;
+                container.style.left = position + 'px';
+
+                if (position < 200) {
+                    animationId = requestAnimationFrame(moveSquare);
+                }
+            }
+
+            moveSquare();
+        }
+
+        startBtn.addEventListener('click', () => {
+            cancelAnimationFrame(animationId); // Cancel any previous animations
+            animate();
+        });
+
+        stopBtn.addEventListener('click', () => {
+            cancelAnimationFrame(animationId);
+        });
+    </script>
+</body>
+</html>

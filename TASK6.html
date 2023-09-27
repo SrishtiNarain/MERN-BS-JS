@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <!-- Add Bootstrap CSS Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+        .error-input1 {
+            border-color: red !important;
+        }
+        .error-input2 {
+            border-color: red !important;
+        }
+        .error-input3 {
+            border-color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <p class="display-1 text-center">Registration Form</p>
+    <center>
+        <form class="form " style="max-width:75%; background-color: #D3D3D3;padding-top: 25px;padding-bottom: 25px;" onsubmit="return validate()">
+            <table>
+              <tr >
+                <td >
+                    <p class="text-start ms-0">Name</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  <input class="form-control rounded" type="text" size="50" id="name"  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="invalid1" style="color: red;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="text-start">Email</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  <input class="form-control rounded" type="text" id="email" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="invalid2" style="color: red;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="text-start">Password</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  <input class="form-control rounded" type="password" id="pass" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="invalid3" style="color: red;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="text-start">Hobbies</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  <input class="form-control rounded" type="number" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br/>
+                    <button class="btn btn-outline-rounded-0 bg-danger text-center" type="submit" style="width: 100%;">Submit</button>
+                </td>
+            </tr>
+            </table>
+            
+            <p class="invalid1" style="color: red;"></p>
+            <p class="invalid2" style="color: red;"></p>
+            <p class="invalid3" style="color: red;"></p>
+        </form>
+    </center>
+
+    <script>
+        function validate() {
+            var name = document.getElementById("name").value;
+            var nameInput = document.getElementById("name");
+            var email = document.getElementById("email").value;
+            var nameemail = document.getElementById("email");
+            var substring = "@gmail.com";
+            var pass = document.getElementById("pass").value;
+            var namepass = document.getElementById("pass");
+    
+            var isValid = true;
+    
+            if (name.length < 5) {
+                document.getElementsByClassName("invalid1")[0].innerHTML = "Name id required";
+                nameInput.classList.add("error-input1"); // Add the error-input class
+                isValid = false;
+            } else {
+                document.getElementsByClassName("invalid1")[0].innerHTML = "";
+                nameInput.classList.remove("error-input1"); // Remove the error-input class
+            }
+            if (!email.includes(substring)) {
+                document.getElementsByClassName("invalid2")[0].innerHTML = "Email is required";
+                nameemail.classList.add("error-input2"); // Add the error-input class
+                isValid = false;
+            } else {
+                document.getElementsByClassName("invalid2")[0].innerHTML = "";
+                nameemail.classList.remove("error-input2"); // Remove the error-input class
+            }
+            if (pass.length < 5) {
+                document.getElementsByClassName("invalid3")[0].innerHTML = "Password is required";
+                namepass.classList.add("error-input3"); // Add the error-input class
+                isValid = false;
+            } else {
+                document.getElementsByClassName("invalid3")[0].innerHTML = "";
+                namepass.classList.remove("error-input3"); // Remove the error-input class
+            }
+    
+            return isValid; // Return the validation result
+        }
+    </script>
+</body>
+</html>

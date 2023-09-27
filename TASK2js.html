@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabetize String</title>
+</head>
+<body>
+    <h1>Alphabetize String</h1>
+
+    <label for="inputString">Enter a String: </label>
+    <input type="text" id="inputString">
+    <button onclick="alphabetizeAndDisplay()">Alphabetize</button>
+
+    <p>Alphabetized String: <span id="alphabetizedString"></span></p>
+
+    <script>
+        
+
+        function alphabetizeAndDisplay() {
+            const inputString = document.getElementById("inputString").value;
+            const alphabetized = inputString.split('').sort().join('');
+            document.getElementById("alphabetizedString").textContent = alphabetized;
+        }
+    </script>
+</body>
+</html>

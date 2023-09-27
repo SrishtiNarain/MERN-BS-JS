@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" type="text/css" />
+    <!-- Add this to the <head> section of your HTML document -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<link href="img/favicon.ico" rel="icon">
+<style>
+    .error-input1 {
+        border-color: red !important;
+    }
+    .error-input2 {
+        border-color: red !important;
+    }
+    .error-input3 {
+        border-color: red !important;
+    }
+    .error-input4 {
+        border-color: red !important;
+    }
+    .error-input5 {
+        border-color: red !important;
+    }
+    .error-input6 {
+        border-color: red !important;
+    }
+</style>
+</head>
+<body>
+    <center>
+        <form class="form " style="max-width:50%; background-color: #D3D3D3;padding-top: 25px;padding-bottom: 25px;" onsubmit="return validate()">
+            <table>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>First Name</b>
+                    </td>
+                    <td>
+                        <i class="fa-regular fa-user" class="ms-3"></i>
+                        <input type="text" placeholder="First Name" id="fn"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <p id="invalid-msg1" style="color: red;"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>Last Name</b>
+                    </td>
+                    <td>
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" placeholder="Last Name" id="ln"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <p id="invalid-msg2" style="color: red;"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>E-Mail</b>
+                    </td>
+                    <td >
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="text" placeholder="E-Mail Address" id="email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <p id="invalid-msg3" style="color: red;"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>Phone#</b>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="text" placeholder="(012)345-6789" id="ph"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <p id="invalid-msg4" style="color: red;"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>Address</b>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-house"></i>
+                        <input type="text" placeholder="Address" id="addr"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <p id="invalid-msg5" style="color: red;"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;" >
+                        <b>City</b>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-house"></i>
+                        <input type="text" placeholder="City" id="city"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <p id="invalid-msg6" style="color: red;"></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>State</b>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-list"></i>
+                        <select >
+                            <option>Please Select your State</option>
+                            <option>Delhi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>Do you have hosting?</b>
+                    </td>
+                    <td><input type="radio" name="gender" value="yes" class="ms-3">Yes<br/>
+                        <input type="radio" name="gender" value="no" class="ms-3">No
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td class="text-end" style="padding-right: 30px;">
+                        <b>Project Description</b>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-pen"></i>
+                        <textarea placeholder="Project Description" ></textarea>
+                    </td>
+                </tr>
+                <tr height="25px">
+                    <td></td>
+                    <td>
+                        
+                        <button type="submit" class="bg-warning ms-3">Send <i class="fa fa-paper-plane-o"></i></button>
+                    </td>
+                </tr>
+
+                
+            </table>
+            
+            
+        </form>
+    </center>
+    <script>
+        function validate() {
+            var fn = document.getElementById("fn").value;
+            var fnInput = document.getElementById("fn");
+            var ln = document.getElementById("ln").value;
+            var lnInput = document.getElementById("ln");
+            var email = document.getElementById("email").value;
+            var emailInput = document.getElementById("email");
+            var substring = "@gmail.com";
+            var ph = document.getElementById("ph").value;
+            var phInput = document.getElementById("ph");
+            var addr = document.getElementById("addr").value;
+            var addrInput = document.getElementById("addr");
+            var city = document.getElementById("city").value;
+            var cityInput = document.getElementById("city");
+    
+            var isValid = true;
+    
+            if (fn.length < 1) {
+                document.getElementById("invalid-msg1").innerHTML = "Please supply your First Name";
+                fnInput.classList.add("error-input1");
+                isValid = false;
+            } else {
+                document.getElementById("invalid-msg1").innerHTML = "";
+                fnInput.classList.remove("error-input1");
+            }
+    
+            if (ln.length < 1) {
+                document.getElementById("invalid-msg2").innerHTML = "Please supply your Last Name";
+                lnInput.classList.add("error-input2");
+                isValid = false;
+            } else {
+                document.getElementById("invalid-msg2").innerHTML = "";
+                lnInput.classList.remove("error-input2");
+            }
+    
+            if (!email.includes(substring)) {
+                document.getElementById("invalid-msg3").innerHTML = "Please supply a valid Gmail email";
+                emailInput.classList.add("error-input3");
+                isValid = false;
+            } else {
+                document.getElementById("invalid-msg3").innerHTML = "";
+                emailInput.classList.remove("error-input3");
+            }
+    
+            if (ph.length < 1) {
+                document.getElementById("invalid-msg4").innerHTML = "Please supply your Phone number";
+                phInput.classList.add("error-input4");
+                isValid = false;
+            } else {
+                document.getElementById("invalid-msg4").innerHTML = "";
+                phInput.classList.remove("error-input4");
+            }
+    
+            if (addr.length < 1) {
+                document.getElementById("invalid-msg5").innerHTML = "Please supply your Address";
+                addrInput.classList.add("error-input5");
+                isValid = false;
+            } else {
+                document.getElementById("invalid-msg5").innerHTML = "";
+                addrInput.classList.remove("error-input5");
+            }
+    
+            if (city.length < 1) {
+                document.getElementById("invalid-msg6").innerHTML = "Please supply your City";
+                cityInput.classList.add("error-input6");
+                isValid = false;
+            } else {
+                document.getElementById("invalid-msg6").innerHTML = "";
+                cityInput.classList.remove("error-input6");
+            }
+    
+            return isValid; // Return true if the form is valid, false otherwise
+        }
+    </script>
+    
+    
+    
+</body>
+</html>

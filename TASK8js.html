@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h2{
+            color: blue;
+            margin-right: auto;
+            margin-left: auto;
+            
+        }
+        .register{
+            align-self: center;
+
+        }
+        .tableback {
+    height: 850px;
+    width:600px;
+    background: linear-gradient(to bottom, #cc0099 0%, #ff6666 100%)
+}
+
+    </style>
+</head>
+<body>
+    <center>
+    <div class="tableback">
+    <h2 align="center">Registration Form</h2>
+    
+    <form style="background-color: linear-gradient(to bottom, #cc0099 0%, #ff6666 100%);" onsubmit="return validate()">
+
+    <table border="0" align="center">
+        
+        <tr>
+            <td>
+                <label for="fn">First Name</label>
+            </td>
+            <td>
+                <input type="text" size="34" id="fn" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg1"></p>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="ln">Last Name</label>
+            </td>
+            <td>
+                <input type="text" size="34" id="ln" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg2"></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="email">Email</label>
+            </td>
+            <td>
+                <input type="text" size="34" id="email" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg3"></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="pass">Password</label>
+            </td>
+            <td>
+                <input type="password" size="34" id="pass" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg4"></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="rpass">Re-enter Password</label>
+            </td>
+            <td>
+                <input type="password" size="34" id="rpass" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg5"></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="gender">Gender:</label>
+                
+            </td>
+            <td>
+               <table >
+                <tr>
+                    <td>
+                        <input type="radio" name="gender" size="34"/>Male
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <input type="radio" name="gender" size="34"/>Female
+                    </td>
+                </tr>
+               </table>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="age">Age</label>
+            </td>
+            <td>
+                <input type="number" size="34" id="age" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg6"></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="ph">Phone Number</label>
+            </td>
+            <td>
+                <input type="number" size="34" id="ph" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg7"></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="addr">Address</label>
+            </td>
+            <td>
+                <input type="number" size="34" id="addr" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <p id="invalid-msg8"></p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="state">State</label>
+                
+            </td>
+            <td>
+                <select>
+                    <option>Choose your state</option>
+
+                </select>
+              
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="lang">Languages Known</label>
+                
+            </td>
+            <td>
+               <input type="checkbox" />English
+               <input type="checkbox" />Hindi 
+               <input type="checkbox" />Tamil
+               <input type="checkbox" />Punjabi
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" />Hereby I declare all the given information is true
+            </td>
+        </tr>
+
+       
+
+        <tr align="right">
+            <td colspan="2">
+                Login to <a href="https://ethnus.com">Ethnus</a> portal
+            </td>
+        </tr>
+
+        
+     </table>
+     <br/>
+     
+     <div align="center">
+        <input type="submit" class="button" style="background-color: red;" value="Register"/>
+</div>
+     </div>
+
+     
+    </form>
+</div>
+</center>
+<script>
+
+
+function validate() {
+        var fn = document.getElementById("fn").value;
+        var ln = document.getElementById("ln").value;
+        var email = document.getElementById("email").value;
+        var substring = "@gmail.com";
+        var pass = document.getElementById("pass").value;
+        var rpass = document.getElementById("rpass").value;
+        var age = document.getElementById("age").value;
+        var ph = document.getElementById("ph").value;
+        var addr = document.getElementById("addr").value;
+
+        var isValid = true; // Initialize a flag to track overall validation
+
+        if (fn.length < 5) {
+            document.getElementById("invalid-msg1").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg1").innerHTML = "";
+        }
+
+        if (ln.length < 5) {
+            document.getElementById("invalid-msg2").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg2").innerHTML = "";
+        }
+        if (!email.includes(substring)) {
+            document.getElementById("invalid-msg3").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg3").innerHTML = "";
+        }
+        if (pass.length < 5) {
+            document.getElementById("invalid-msg4").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg4").innerHTML = "";
+        }
+        if (pass != rpass && rpass.length<5) {
+            document.getElementById("invalid-msg5").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg5").innerHTML = "";
+        }
+        if (age >50) {
+            document.getElementById("invalid-msg6").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg6").innerHTML = "";
+        }
+        if (ph.length >10 || ph.length<10) {
+            document.getElementById("invalid-msg7").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg7").innerHTML = "";
+        }
+        if (addr.length<10) {
+            document.getElementById("invalid-msg8").innerHTML = `<p class="text-light">POOR</p>`;
+            isValid = false; // Set the flag to false
+        } else {
+            document.getElementById("invalid-msg8").innerHTML = "";
+        }
+        
+
+        return isValid; // Return the flag's value
+    };
+
+</script>
+
+    
+    
+</body>
+</html>
